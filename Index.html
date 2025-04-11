@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Deteksi Kadar Gay</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #f6f6f6, #d0eaff);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      padding: 20px;
+      text-align: center;
+    }
+    h1 {
+      color: #333;
+    }
+    input, button {
+      padding: 10px;
+      font-size: 1rem;
+      margin: 10px;
+    }
+    #result {
+      margin-top: 20px;
+      font-size: 1.2rem;
+      color: #222;
+    }
+    footer {
+      position: absolute;
+      bottom: 10px;
+      font-size: 0.9rem;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+  <h1>Tes seberapa Gay kamu</h1>
+  <input type="text" id="name" placeholder="Masukkan namamu...">
+  <button onclick="cekGay()">Cek Sekarang</button>
+  <div id="result"></div>
+
+  <footer>
+    Made by: Yuusuke
+  </footer>
+
+  <script>
+    function cekGay() {
+      const name = document.getElementById('name').value.trim();
+      if (!name) {
+        alert("ini nama dulu bambang!.");
+        return;
+      }
+
+      const percentage = Math.floor(Math.random() * 101);
+      let message = "";
+
+      if (percentage <= 10) {
+        message = "kamu sedikit bahkan tidak terdeteksi gay, kamu aman";
+      } else if (percentage <= 30) {
+        message = "kamu agaknya mulai kena virus gay, hawa pelangi mulai merasuki mu";
+      } else if (percentage <= 60) {
+        message = "kamu sudah mulai menjadi gay , kamu patut dijauhi";
+      } else if (percentage <= 80) {
+        message = "wadoh kmu sangat gayyy!!!";
+      } else {
+        message = "njir udah ga ketolong ini mah, awas kmu gayyyyy";
+      }
+
+      document.getElementById('result').innerText = `${name}, kamu terdeteksi ${percentage}% gay, ${message}`;
+    }
+  </script>
+</body>
+</html>
